@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>test</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="title">
+      Evaluate a News Article with Natural Language Processing
+    </h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <section>
+        <form id="form">
+          <label for="url">URL</label>
+          <input id="url" type="text" name="input" value="" placeholder="Enter The Article URL" />
+          <button type="submit" class="btn">
+            Submit
+          </button>
+        </form>
+      </section>
+
+      <section>
+        <strong>Results:</strong>
+        <div id="agreement"></div>
+        <div id="confidence"></div>
+        <div id="scoreTag"></div>
+      </section>
+    </div>
+  </main>
+
+
+</body>
+<script>
+  // Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+      });
+  }
+</script>
+</html>
